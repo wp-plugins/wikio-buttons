@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.1.7S";
+	$wikio_plugin_version = "0.1.7";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
