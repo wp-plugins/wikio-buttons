@@ -3,7 +3,7 @@
 	Plugin Name: Wikio Buttons
 	Plugin URI: http://wikio.com
 	Description: Compatible Worpress 2.3 and above. <a href="themes.php?page=wikio-buttons/wikio-buttons.php">Configure it.</a>
-	Version: 0.1.6
+	Version: 0.1.7
 	Author: Wikio
 	Author URI: http://wikio.com
 	
@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.1.6";
+	$wikio_plugin_version = "0.1.7";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
@@ -113,6 +113,21 @@
 	if (!get_option( 'wikio_top_title' )){
 		update_option( wikio_top_title, htmlentities(__('Top des blogs',$wikio_domain)) );
 	}
+	
+	// Top Blog style
+	if (!get_option( 'wikio_top_style' )){
+		update_option( wikio_top_style, '1' );
+	}
+	
+	//// Top Blog categ display
+//	if (!get_option( 'wikio_top_categ' )){
+//		update_option( wikio_top_categ, '1' );
+//	}
+//	
+//	// Top Blog general display
+//	if (!get_option( 'wikio_top_gen' )){
+//		update_option( wikio_top_gen, '1' );
+//	}
 	
 // Hook for adding admin menus
 	add_action( 'admin_menu', 'mt_add_pages' );
@@ -711,15 +726,34 @@
 				
 				$wikio_top_auto = htmlentities($_POST['wikio_top_auto']);
 				$wikio_top_title = htmlentities($_POST['wikio_top_title']);
-					
+				$wikio_top_style = htmlentities($_POST['wikio_top_style']);
+				$wikio_top_categ = htmlentities($_POST['wikio_top_categ']);
+				$wikio_top_gen = htmlentities($_POST['wikio_top_gen']);
+				
 				// Save the posted value in the database
 				update_option( wikio_top_auto, $wikio_top_auto);
 				update_option( wikio_top_title, $wikio_top_title);
+				update_option( wikio_top_style, $wikio_top_style);
+				update_option( wikio_top_categ, $wikio_top_categ);
+				update_option( wikio_top_gen, $wikio_top_gen);
 			}
 			
 			// return options values
 				$wikio_top_auto = get_option( 'wikio_top_auto' );
 				$wikio_top_title = stripslashes(html_entity_decode(get_option('wikio_top_title')));
+				$wikio_top_style = get_option( 'wikio_top_style' );
+				$wikio_top_categ = get_option( 'wikio_top_categ' );
+				$wikio_top_gen = get_option( 'wikio_top_gen' );
+				
+			// Checked ?
+				
+				if ($wikio_top_categ == 1){$wikio_top_categ_checked = "checked";} else {$wikio_top_categ_checked = "";}
+				if ($wikio_top_gen == 1){$wikio_top_gen_checked = "checked";} else {$wikio_top_gen_checked = "";}
+				
+				//echo 'auto-'.$wikio_top_auto;
+//				echo '-title-'.$wikio_top_title;
+//				echo '-style-'.$wikio_top_style;
+//				echo '-categ-'.$wikio_top_categ;
 			?>
 			
 			<br /><br />
@@ -730,9 +764,24 @@
 					<tr>
 						<th scope="row"><?php _e('Preview',$wikio_domain); ?></th>
 						<td>
-						<a href="http://www.wikio.<?php echo $wikio_tld; ?>/blogs/top/">
-						<img src="http://external.wikio.<?php echo $wikio_tld; ?>/blogs/top/getrank?url=<?php echo get_bloginfo( 'url' ); ?>&cat=1" style="border: none;" alt="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" title="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" />
-						</a>
+						<table width="400">
+							<tr>
+								<td valign="top">
+								<p><?php _e('Classement general',$wikio_domain); ?>:</p>
+								<a href="http://www.wikio.<?php echo $wikio_tld; ?>/blogs/top/">
+						<img src="http://external.wikio.<?php echo $wikio_tld; ?>/blogs/top/getrank?url=<?php echo get_bloginfo( 'url' ); ?>&style=<?php echo $wikio_top_style; ?>" style="border: none;" alt="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" title="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" />
+								</td>
+								<td valign="top">
+								<p><?php _e('Classement dans votre categorie',$wikio_domain); ?>:</p>
+								<a href="http://www.wikio.<?php echo $wikio_tld; ?>/blogs/top/">
+						<img src="http://external.wikio.<?php echo $wikio_tld; ?>/blogs/top/getrank?url=<?php echo get_bloginfo( 'url' ); ?>&cat=1&style=<?php echo $wikio_top_style; ?>" style="border: none;" alt="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" title="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" />
+								</td>
+							</tr>
+						</table>
+						<p>
+						<?php _e("Si aucun chiffre n'est visible verifiez que votre blog est bien inscrit dans Wikio ou"); ?>
+						<a href="http://www.wikio.<?php echo $wikio_tld; ?>/addblog" target="_blank"><?php _e('inscrivez-vous gratuitement.',$wikio_domain); ?></a>
+						</p>
 						</td>
 					</tr>
 				</tbody>
@@ -757,6 +806,46 @@
 			<table class="form-table">
 				<tbody>
 					<tr>
+						<th scope="row"><?php _e('Style',$wikio_domain); ?></th>
+						<td>
+							<table width="400">
+							<tr>
+							
+							<?php
+							for ($i=1; $i<9; $i++){
+							if ($i == $wikio_top_style){$wikio_top_style_check = "checked";} else {$wikio_top_style_check = "";}
+							print('<td><input name="wikio_top_style" id="wikio_top_style_'.$i.'" type="radio" value="'.$i.'" onclick="please_update(62);" '.$wikio_top_style_check.' /></td><td><label for="wikio_top_style_'.$i.'"><img src="http://external.wikio.'.$wikio_tld.'/blogs/top/getrank?url='.urlencode(get_bloginfo( 'url' )).'&style='.$i.'" style="border: none;" /></label></td>'); 
+							if ( $i == 4 ){ print ("</tr><tr>");}
+							}
+							?>
+							
+							<td>
+							</td>
+							</tr>
+							</table>
+						<input id="post-query-submit-62" class="button-secondary" type="submit" value="<?php _e('Enregistrer les modifications',$wikio_domain); ?>" style="display:none;" name="submit" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table class="form-table">
+				<tbody>
+					<tr>
+						<th scope="row"><?php _e('Affichage',$wikio_domain); ?></th>
+						<td>
+						<p><input name="wikio_top_gen" id="wikio_top_gen" type="checkbox" value="1" <?php echo $wikio_top_gen_checked; ?> /> <label for="wikio_top_gen"><?php _e('Afficher mon classement dans le top general'); ?></label>
+						</p>
+						<p>
+						<input name="wikio_top_categ" id="wikio_top_categ" type="checkbox" value="1" <?php echo $wikio_top_categ_checked; ?> /> <label for="wikio_top_categ"><?php _e('Afficher mon classement dans ma categorie'); ?></label></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+						
+			<table class="form-table">
+				<tbody>
+					<tr>
 						<th scope="row"><?php _e('Insertion automatique',$wikio_domain); ?></th>
 						<td>
 						<select name="wikio_top_auto" onchange="top(this); please_update(6)">
@@ -771,12 +860,7 @@
 						<div id="top_script"<?php if ($wikio_top_auto == 1){ echo 'style="display:block"';} else { echo 'style="display:none"';}?>>
 							<strong><?php _e('Script a copier / coller',$wikio_domain); ?> :</strong><br />
 							<div class="wikio_share_form">
-							<textarea name="1" cols="75" rows="4" onfocus="select()"><?php print("<a href=\"http://www.wikio.$wikio_tld/blogs/top/\">");
-							print("\n<img src=\"http://external.wikio.$wikio_tld/blogs/top/getrank?url=");
-							echo get_bloginfo( 'url' );
-							print("&cat=1\" style=\"border: none;\" alt=\"");
-_e('Wikio - Top des blogs',$wikio_domain); print("\" title=\""); _e('Wikio - Top des blogs',$wikio_domain); print("\" /></a>"); ?>
-						</textarea>
+							<textarea name="1" cols="75" rows="4" onfocus="select()"><?php print("<?php if (function_exists('wikio_top_alone')){wikio_top_alone();} ?>"); ?></textarea>
 							<br />
 							<label for="wikio_sub_title"><?php _e("Si vous le souhaitez, vous pouvez copier et coller ce script directement dans votre template a l'endroit que vous voulez",$wikio_domain); ?>.
 							<br /></label>
@@ -890,9 +974,9 @@ class wikio_sub_widget {
 		
 		if ( !function_exists('register_sidebar_widget') || !function_exists('register_widget_control') )
 		return;
+		
 		register_sidebar_widget( array(__('Subscribe',$wikio_domain),'widgets'),array(&$this, 'widget') );
 		register_widget_control( array(__('Subscribe',$wikio_domain), 'widgets'), array(&$this, 'widget_options') );
-		
 	}
 
 	function widget($args) {
@@ -913,7 +997,7 @@ class wikio_sub_widget {
 		$WidgetTitle = stripslashes($WidgetTitle);
 				
 		extract($args);
-
+		
 		echo $before_widget.$before_title.$WidgetTitle.$after_title;
 		
 		// widget abo
@@ -987,16 +1071,37 @@ class wikio_sub_widget {
 					}			
 					?>
 					
-					<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option('wikio_sub_rss'); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&widgets=<?php echo $widgets; ?>&url=<?php echo get_option('wikio_sub_rss'); ?>"></script>
+					<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option( 'wikio_sub_rss' ); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&widgets=<?php echo $widgets; ?>&url=<?php echo get_option( 'wikio_sub_rss' ); ?>"></script>
 				<?php
 		}
 	}
 
+// top alone
+	function wikio_top_alone(){
+	$wikio_tld = get_option( 'wikio_tld' );
+	$wikio_top_style = get_option( 'wikio_top_style' );
+	$wikio_top_categ = get_option( 'wikio_top_categ' );
+	$wikio_top_gen = get_option( 'wikio_top_gen' );
+	
+	if ( ( get_option( 'wikio_top_auto' ) == 1) && ( $wikio_top_gen == 1 ) ){
+		echo '<p><a href="http://www.wikio.'.$wikio_tld.'/blogs/top/">
+		<img src="http://external.wikio.'.$wikio_tld.'/blogs/top/getrank?url='.urlencode(get_bloginfo( 'url' )).'&amp;style='.$wikio_top_style.'" style="border: none;" alt="'.__('Wikio - Top des blogs',$wikio_domain).' title="'.__('Wikio - Top des blogs',$wikio_domain).'" /></a></p>';
+		
+		}
+	
+	if ( ( get_option( 'wikio_top_auto' ) == 1) && ( $wikio_top_categ == 1 ) ){
+		echo '<p><a href="http://www.wikio.'.$wikio_tld.'/blogs/top/">
+		<img src="http://external.wikio.'.$wikio_tld.'/blogs/top/getrank?url='.urlencode(get_bloginfo( 'url' )).'&amp;cat=1&amp;style='.$wikio_top_style.'" style="border: none;" alt="'.__('Wikio - Top des blogs',$wikio_domain).' title="'.__('Wikio - Top des blogs',$wikio_domain).'" /></a></p>';
+		
+		}
+		
+	}
+	
 // share button alone
 	function wikio_share_alone(){
 	$wikio_tld = get_option( 'wikio_tld' );
 	
-	if (get_option('wikio_share_auto') == 1){
+	if ( get_option( 'wikio_share_auto' ) == 1 ){
 		$wikio_share_options = get_option( 'wikio_share_options');
 				
 				$title = urlencode(the_title('', '', false));
@@ -1026,7 +1131,7 @@ class wikio_sub_widget {
 // vote button alone
 	function wikio_vote_alone(){
 			$wikio_tld = get_option( 'wikio_tld' );
-			
+						
 			if (get_option( 'wikio_vote_auto' ) == 1){
 			
 			$link = urlencode(get_permalink());
@@ -1399,19 +1504,27 @@ class wikio_top_widget {
 		// Return all options values
 		$WidgetTitle = html_entity_decode(get_option( 'wikio_top_title' ));
 		$WidgetTitle = stripslashes($WidgetTitle);
+		$wikio_top_style = get_option( 'wikio_top_style' );
+		$wikio_top_categ = get_option( 'wikio_top_categ' );
+		$wikio_top_gen = get_option( 'wikio_top_gen' );
 				
 		extract($args);
-
 		echo $before_widget.$before_title.$WidgetTitle.$after_title;
 		
-				
-			?>
-			
-			<a href="http://www.wikio.<?php echo $wikio_tld; ?>/blogs/top/">
-			<img src="http://external.wikio.<?php echo $wikio_tld; ?>/blogs/top/getrank?url=<?php echo get_bloginfo( 'url' ); ?>&cat=1" style="border: none;" alt="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" title="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" />
-			</a>
+		if ( $wikio_top_gen == 1 ){
+			?>	
+			<p><a href="http://www.wikio.<?php echo $wikio_tld; ?>/blogs/top/">
+			<img src="http://external.wikio.<?php echo $wikio_tld; ?>/blogs/top/getrank?url=<?php echo get_bloginfo( 'url' ); ?>&amp;style=<?php echo $wikio_top_style; ?>" style="border: none;" alt="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" title="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" /></a></p>
 		<?php
-				
+		}
+		
+		if ( $wikio_top_categ == 1 ){
+			?>	
+			<p><a href="http://www.wikio.<?php echo $wikio_tld; ?>/blogs/top/">
+			<img src="http://external.wikio.<?php echo $wikio_tld; ?>/blogs/top/getrank?url=<?php echo get_bloginfo( 'url' ); ?>&amp;cat=1&amp;style=<?php echo $wikio_top_style; ?>" style="border: none;" alt="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" title="<?php _e('Wikio - Top des blogs',$wikio_domain); ?>" /></a></p>
+		<?php
+		}
+		
 		echo $after_widget;
 	}
 

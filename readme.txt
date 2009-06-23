@@ -4,7 +4,7 @@ Donate link:
 Tags: feed, facebook, social, widget, post, wikio, vote, share, subscribe, news, buddypress, widget
 Requires at least: 2.0.2
 Tested up to: 2.8
-Stable tag: 0.1.6
+Stable tag: 0.1.7
 
 Install Wikio buttons on your blog!
 
@@ -29,9 +29,10 @@ Important: This plugin is still in BETA TESTING.
 English, french, Italian, Spanish, German. Some .po files are available for your own translations.
 
 = Content =
-Wikio Share, vote and Subscribe buttons, Top blog badge, and a news widget.
+Wikio Share, Vote and Subscribe buttons, Top blog badge, and a news widget.
 
 == Screenshots ==
 
 1. Share button
 2. Subscribe button
+3. Top blog badges
