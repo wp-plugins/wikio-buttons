@@ -3,8 +3,8 @@ Contributors: Wikio
 Donate link: 
 Tags: feed, facebook, social, widget, post, wikio, vote, share, subscribe, news, buddypress, widget
 Requires at least: 2.0.2
-Tested up to: 2.8
-Stable tag: 0.1.7
+Tested up to: 2.8.3
+Stable tag: 0.1.8
 
 Install Wikio buttons on your blog!
 

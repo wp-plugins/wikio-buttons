@@ -3,7 +3,7 @@
 	Plugin Name: Wikio Buttons
 	Plugin URI: http://wikio.com
 	Description: Compatible Worpress 2.3 and above. <a href="themes.php?page=wikio-buttons/wikio-buttons.php">Configure it.</a>
-	Version: 0.1.7
+	Version: 0.1.8
 	Author: Wikio
 	Author URI: http://wikio.com
 	
@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.1.7";
+	$wikio_plugin_version = "0.1.8";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
@@ -932,7 +932,7 @@ class wikio_badge{
 		if ( (get_option( 'wikio_share_display' ) == 1) && (is_single()) || (get_option( 'wikio_share_display' ) == 0) ){
 			$badge .= "
 			<div class=\"wikio-share-button\">
-			 <a href=\"http://www.wikio.".$wikio_tld."/sharethis?url=".$link."&title=".$title."\" id=\"wikio-share-popup-button\">Wikio</a><script type=\"text/javascript\" src=\"http://www.wikio.".$wikio_tld."/sharethispopupv2?services=".$services."&url=".$link."&title=".$title."\"></script></div>";
+			 <a href=\"http://www.wikio.".$wikio_tld."/sharethis?url=".$link."&amp;title=".$title."\" id=\"wikio-share-popup-button\">Wikio</a><script type=\"text/javascript\" src=\"http://www.wikio.".$wikio_tld."/sharethispopupv2?services=".$services."&amp;url=".$link."&amp;title=".$title."\"></script></div>";
 		   }       
 	 }
 	
@@ -943,7 +943,7 @@ class wikio_badge{
 			$badge .= "
 			<div class=\"wikio-share-button\">
 			<a class=\"wikio\" href=\"http://www.wikio.".$wikio_tld."\">Wikio</a>
-		<script type=\"text/javascript\" src=\"http://www.wikio.".$wikio_tld."/votebadge?style=rounded-open-blue-rating&url=".$link."\"></script>
+		<script type=\"text/javascript\" src=\"http://www.wikio.".$wikio_tld."/votebadge?style=rounded-open-blue-rating&amp;url=".$link."\"></script>
 			 </div>
 			 ";
 			 }
@@ -1020,7 +1020,7 @@ class wikio_sub_widget {
 			
 			?>
 			
-			<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option('wikio_sub_rss'); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&widgets=<?php echo $widgets; ?>&url=<?php echo get_option('wikio_sub_rss'); ?>"></script>
+			<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option('wikio_sub_rss'); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&amp;widgets=<?php echo $widgets; ?>&amp;url=<?php echo get_option('wikio_sub_rss'); ?>"></script>
 		<?php
 				
 		echo $after_widget;
@@ -1071,7 +1071,7 @@ class wikio_sub_widget {
 					}			
 					?>
 					
-					<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option( 'wikio_sub_rss' ); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&widgets=<?php echo $widgets; ?>&url=<?php echo get_option( 'wikio_sub_rss' ); ?>"></script>
+					<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option( 'wikio_sub_rss' ); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&amp;widgets=<?php echo $widgets; ?>&amp;url=<?php echo get_option( 'wikio_sub_rss' ); ?>"></script>
 				<?php
 		}
 	}
@@ -1119,7 +1119,7 @@ class wikio_sub_widget {
 				if (!is_feed()){
 					?>
 						
-						<a href="http://www.wikio.<?php echo $wikio_tld; ?>/sharethis?url=<?php echo $link; ?>&title=<?php echo $title; ?>" id="wikio-share-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/sharethispopupv2?services=<?php echo $services; ?>&url=<?php echo $link; ?>&title=<?php echo $title; ?>"></script>
+						<a href="http://www.wikio.<?php echo $wikio_tld; ?>/sharethis?url=<?php echo $link; ?>&amp;title=<?php echo $title; ?>" id="wikio-share-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/sharethispopupv2?services=<?php echo $services; ?>&amp;url=<?php echo $link; ?>&amp;title=<?php echo $title; ?>"></script>
 				<?php
 				}
 			}
@@ -1142,7 +1142,7 @@ class wikio_sub_widget {
 				if (!is_feed()){
 						?>
 						<a class="wikio" href="http://www.wikio.<?php echo $wikio_tld; ?>">Wikio</a>
-			<script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/votebadge?style=rounded-open-blue-rating&url=<?php echo $link; ?>"></script>
+			<script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/votebadge?style=rounded-open-blue-rating&amp;url=<?php echo $link; ?>"></script>
 						<?php
 						}
 				}
@@ -1169,7 +1169,7 @@ class wikio_sub_widget {
 				if (!is_feed()){
 					?>
 						
-					<a href="http://www.wikio.<?php echo $wikio_tld; ?>/sharethis?url=<?php echo $link; ?>&title=<?php echo $title; ?>" id="wikio-share-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/sharethispopupv2?services=<?php echo $services; ?>&url=<?php echo $link; ?>&title=<?php echo $title; ?>"></script>
+					<a href="http://www.wikio.<?php echo $wikio_tld; ?>/sharethis?url=<?php echo $link; ?>&amp;title=<?php echo $title; ?>" id="wikio-share-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/sharethispopupv2?services=<?php echo $services; ?>&amp;url=<?php echo $link; ?>&amp;title=<?php echo $title; ?>"></script>
 				<?php
 				}	
 	}
@@ -1185,7 +1185,7 @@ class wikio_sub_widget {
 			if (!is_feed()){
 					?>
 						<a class="wikio" href="http://www.wikio.<?php echo $wikio_tld; ?>">Wikio</a>
-						<script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/votebadge?style=rounded-open-blue-rating&url=<?php echo $link; ?>"></script>
+						<script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/votebadge?style=rounded-open-blue-rating&amp;url=<?php echo $link; ?>"></script>
 					<?php
 					}
 		}
@@ -1221,7 +1221,7 @@ class wikio_sub_widget {
 								
 					?>
 					
-					<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option('wikio_sub_rss'); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&widgets=<?php echo $widgets; ?>&url=<?php echo get_option('wikio_sub_rss'); ?>"></script>
+					<a target="_blank" href="http://www.wikio.<?php echo $wikio_tld; ?>/subscribethis?url=<?php echo get_option('wikio_sub_rss'); ?>" class="wikio-popup-button">Wikio</a><script type="text/javascript" src="http://www.wikio.<?php echo $wikio_tld; ?>/wikiothispopupv2?services=<?php echo $services; ?>&amp;widgets=<?php echo $widgets; ?>&amp;url=<?php echo get_option('wikio_sub_rss'); ?>"></script>
 				<?php
 	}
 
