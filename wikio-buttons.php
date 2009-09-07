@@ -3,7 +3,7 @@
 	Plugin Name: Wikio Buttons
 	Plugin URI: http://wikio.com
 	Description: Compatible Worpress 2.3 and above. <a href="themes.php?page=wikio-buttons/wikio-buttons.php">Configure it.</a>
-	Version: 0.1.8
+	Version: 0.1.9
 	Author: Wikio
 	Author URI: http://wikio.com
 	
@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.1.8";
+	$wikio_plugin_version = "0.1.9";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
@@ -41,10 +41,10 @@
 
 // All the services
 	// All the share items
-	$wikio_share_items = array('wikio-share', 'facebook', 'delicious', 'digg', 'googlebookmarks','live-share', 'misterwong', 'myspace', 'newsvine', 'reddit', 'technorati', 'twitter', 'blogmarks', 'yahoobookmarks', 'furl', 'ask', 'mixx', 'spurl', 'magnolia', 'segnalo', 'netvouz', 'fark', 'propeller', 'multiply', 'simpy', 'diigo', 'bluedot', 'linkagogo', 'feedmelinks', 'backflip');
+	$wikio_share_items = array('twitter', 'wikio-share', 'facebook', 'delicious', 'digg', 'netvibes-share', 'viadeo', 'identica', 'googlebookmarks','live-share', 'misterwong', 'myspace', 'newsvine', 'reddit', 'technorati', 'blogmarks', 'yahoobookmarks', 'furl', 'ask', 'mixx', 'spurl', 'magnolia', 'segnalo', 'netvouz', 'fark', 'propeller', 'multiply', 'simpy', 'diigo', 'bluedot', 'linkagogo', 'feedmelinks', 'backflip', 'meneame', 'bitacoras', 'chuenga', 'fresqui', 'kledy');
 	
 	// all the sub items
-	$wikio_sub_items = array('wikio', 'netvibes', 'google', 'yahoo', 'bloglines', 'aol', 'msn', 'newsgator', 'pageflakes', 'live', 'rojo', 'rss', 'technorati');
+	$wikio_sub_items = array('wikio', 'netvibes', 'google', 'yahoo', 'bloglines', 'aol', 'msn', 'newsgator', 'pageflakes', 'live', 'rss', 'technorati', 'webwag');
 	
 	// all the widgets items
 	$wikio_widgets_items = array('vista','macos');
@@ -129,6 +129,7 @@
 //		update_option( wikio_top_gen, '1' );
 //	}
 	
+		
 // Hook for adding admin menus
 	add_action( 'admin_menu', 'mt_add_pages' );
 
@@ -287,7 +288,21 @@
 		// Return the "auto" value
 		$wikio_share_auto = get_option( 'wikio_share_auto' );
 		$wikio_tld = get_option( 'wikio_tld' );	
-		
+	
+		// Return Twitter url
+		if ( $wikio_tld == "co.uk" ){
+			$wikio_twitter_url = "http://twitter.com/Wikio_uk";
+		} else if ( $wikio_tld == "com" ){
+			$wikio_twitter_url = "http://twitter.com/Wikio_us";
+		} else if ( $wikio_tld == "fr" ){
+			$wikio_twitter_url = "http://twitter.com/Wikio_fr";
+		} else if ( $wikio_tld == "it" ){
+			$wikio_twitter_url = "http://twitter.com/Wikio_it";
+		} else if ( $wikio_tld == "es" ){
+			$wikio_twitter_url = "http://twitter.com/Wikio_es";
+		} else if ( $wikio_tld == "de" ){
+			$wikio_twitter_url = "http://twitter.com/Wikio_de";
+		}
 			?>
 			<!--<p><?php _e('Le plugin Wikio vous permet d\'ajouter un',$wikio_domain); ?> <a href="#wikio_vote"><?php _e('Bouton de vote',$wikio_domain); ?></a> <?php _e('et celui de',$wikio_domain); ?> <a href="#wikio_share"><?php _e('Partage universel',$wikio_domain); ?></a> <?php _e('sous vos articles',$wikio_domain); ?>, <?php _e('un ou plusieurs widgets de news',$wikio_domain); ?>, <a href="#wikio_subscribe"><?php _e('Le bouton d\'abonnement universel',$wikio_domain); ?></a> <?php _e('et le badge',$wikio_domain); ?> <a href="#wikio_top"><?php _e('Top des blogs',$wikio_domain); ?></a>.</p>-->
 			
@@ -307,6 +322,8 @@
 							<option value="co.uk" <?php if ($wikio_tld == "co.uk"){ echo 'selected="selected"';} ?>><?php _e('Wikio.co.uk (uk)',$wikio_domain); ?></option>
 						</select>
 						<input id="post-query-submit" class="button-secondary" type="submit" value="<?php _e('Enregistrer les modifications',$wikio_domain); ?>" style="display:none;" name="submit" />
+						<br />
+						<label for="wikio_tld"><a href="http://www.wikio.<?php echo $wikio_tld; ?>/addblog"><?php _e('Inscrivez votre site',$wikio_backlinks_domain); ?></a>&raquo;</label>
 						</td>
 					</tr>
 				</tbody>
@@ -877,7 +894,7 @@
 			</div>
 			</form>
 	
-	
+		<a href="<?php echo $wikio_twitter_url; ?>"><img src="<?php echo $wikio_plugin_image_dir; ?>/Twitter_logo.gif" alt="Follow us on Twitter" /></a>
 	<?php
 			
 		

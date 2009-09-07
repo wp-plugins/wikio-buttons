@@ -4,7 +4,7 @@ Donate link:
 Tags: feed, facebook, social, widget, post, wikio, vote, share, subscribe, news, buddypress, widget
 Requires at least: 2.0.2
 Tested up to: 2.8.3
-Stable tag: 0.1.8
+Stable tag: 0.1.9
 
 Install Wikio buttons on your blog!
 
@@ -14,7 +14,7 @@ Install vote, share or universal subscription buttons, as well as the Top Blog b
 
 The simplified interface will allow you to personalize all your Wikio tools without any technical know-how at all.
 
-Important: This plugin is still in BETA TESTING.
+This plugin is still in BETA TESTING.
 
 
 == Installation ==
