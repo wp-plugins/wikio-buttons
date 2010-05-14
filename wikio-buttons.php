@@ -3,7 +3,7 @@
 	Plugin Name: Wikio Buttons
 	Plugin URI: http://wikio.com
 	Description: Compatible Worpress 2.3 and above. <a href="themes.php?page=wikio-buttons/wikio-buttons.php">Configure it.</a>
-	Version: 0.1.9
+	Version: 0.2
 	Author: Wikio
 	Author URI: http://wikio.com
 	
@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.1.9";
+	$wikio_plugin_version = "0.2";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
@@ -41,7 +41,7 @@
 
 // All the services
 	// All the share items
-	$wikio_share_items = array('twitter', 'wikio-share', 'facebook', 'delicious', 'digg', 'netvibes-share', 'viadeo', 'identica', 'googlebookmarks','live-share', 'misterwong', 'myspace', 'newsvine', 'reddit', 'technorati', 'blogmarks', 'yahoobookmarks', 'furl', 'ask', 'mixx', 'spurl', 'magnolia', 'segnalo', 'netvouz', 'fark', 'propeller', 'multiply', 'simpy', 'diigo', 'bluedot', 'linkagogo', 'feedmelinks', 'backflip', 'meneame', 'bitacoras', 'chuenga', 'fresqui', 'kledy');
+	$wikio_share_items = array('twitter', 'wikio-share', 'facebook', 'googlebuzz', 'friendfeed','linkedin','plaxo','tumblr','delicious', 'digg', 'netvibes-share', 'viadeo', 'identica', 'googlebookmarks','live-share', 'misterwong', 'myspace', 'newsvine', 'reddit', 'technorati', 'blogmarks', 'yahoobookmarks', 'furl', 'ask', 'mixx', 'spurl', 'magnolia', 'segnalo', 'netvouz', 'fark', 'propeller', 'multiply', 'simpy', 'diigo', 'bluedot', 'linkagogo', 'feedmelinks', 'backflip', 'meneame', 'bitacoras', 'chuenga', 'fresqui', 'kledy');
 	
 	// all the sub items
 	$wikio_sub_items = array('wikio', 'netvibes', 'google', 'yahoo', 'bloglines', 'aol', 'msn', 'newsgator', 'pageflakes', 'live', 'rss', 'technorati', 'webwag');
