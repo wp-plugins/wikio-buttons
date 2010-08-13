@@ -3,11 +3,11 @@
 	Plugin Name: Wikio Buttons
 	Plugin URI: http://wikio.com
 	Description: Compatible Worpress 2.3 and above. <a href="themes.php?page=wikio-buttons/wikio-buttons.php">Configure it.</a>
-	Version: 0.2
+	Version: 0.2.1
 	Author: Wikio
 	Author URI: http://wikio.com
 	
-	Copyright 2009  Wikio  (email : info@wikio.com)
+	Copyright 2010  Wikio  (email : info@wikio.com)
 	
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.2";
+	$wikio_plugin_version = "0.2.1";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
@@ -918,9 +918,17 @@ class wikio_badge{
   function wikio_badge_do($content){ 
 	$wikio_tld = get_option( 'wikio_tld' );
 	$link = "";
-	$title = ""; 
+	$title = "";
+	
+	// Wp encoding hack
+	$title = the_title('','',false);
+	$title = str_ireplace('&#8217;',"'",$title);
+	$title = str_ireplace('&#8211;',"-",$title);
+	$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+	$title = str_ireplace('&#8364;',"€",$title);
+	$title = urlencode($title);
+	
 	$link  = urlencode(get_permalink($post->ID));
-	$title = urlencode(the_title('','',false));
 	 
 	 // Return all options values
 	$wikio_share_options = get_option( 'wikio_share_options' );
@@ -1121,7 +1129,14 @@ class wikio_sub_widget {
 	if ( get_option( 'wikio_share_auto' ) == 1 ){
 		$wikio_share_options = get_option( 'wikio_share_options');
 				
-				$title = urlencode(the_title('', '', false));
+				// Wp encoding hack
+				$title = the_title('','',false);
+				$title = str_ireplace('&#8217;',"'",$title);
+				$title = str_ireplace('&#8211;',"-",$title);
+				$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+				$title = str_ireplace('&#8364;',"€",$title);
+				$title = urlencode($title);
+	
 				$link = urlencode(get_permalink());
 				
 				foreach ( $wikio_share_options as $key=>$value ){
@@ -1174,7 +1189,14 @@ class wikio_sub_widget {
 		
 		$wikio_share_options = get_option( 'wikio_share_options');
 				
-				$title = urlencode(the_title('', '', false));
+				// Wp encoding hack
+				$title = the_title('','',false);
+				$title = str_ireplace('&#8217;',"'",$title);
+				$title = str_ireplace('&#8211;',"-",$title);
+				$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+				$title = str_ireplace('&#8364;',"€",$title);
+				$title = urlencode($title);
+	
 				$link = urlencode(get_permalink());
 				
 				foreach ( $wikio_share_options as $key=>$value ){
