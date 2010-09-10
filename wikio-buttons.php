@@ -3,7 +3,7 @@
 	Plugin Name: Wikio Buttons
 	Plugin URI: http://wikio.com
 	Description: Compatible Worpress 2.3 and above. <a href="themes.php?page=wikio-buttons/wikio-buttons.php">Configure it.</a>
-	Version: 0.2.1
+	Version: 0.2.2
 	Author: Wikio
 	Author URI: http://wikio.com
 	
@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.2.1";
+	$wikio_plugin_version = "0.2.2";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
@@ -922,10 +922,10 @@ class wikio_badge{
 	
 	// Wp encoding hack
 	$title = the_title('','',false);
-	$title = str_ireplace('&#8217;',"'",$title);
-	$title = str_ireplace('&#8211;',"-",$title);
-	$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-	$title = str_ireplace('&#8364;',"€",$title);
+	$title = str_replace('&#8217;',"'",$title);
+	$title = str_replace('&#8211;',"-",$title);
+	$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+	$title = str_replace('&#8364;',"€",$title);
 	$title = urlencode($title);
 	
 	$link  = urlencode(get_permalink($post->ID));
@@ -1131,10 +1131,10 @@ class wikio_sub_widget {
 				
 				// Wp encoding hack
 				$title = the_title('','',false);
-				$title = str_ireplace('&#8217;',"'",$title);
-				$title = str_ireplace('&#8211;',"-",$title);
-				$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-				$title = str_ireplace('&#8364;',"€",$title);
+				$title = str_replace('&#8217;',"'",$title);
+				$title = str_replace('&#8211;',"-",$title);
+				$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+				$title = str_replace('&#8364;',"€",$title);
 				$title = urlencode($title);
 	
 				$link = urlencode(get_permalink());
@@ -1191,10 +1191,10 @@ class wikio_sub_widget {
 				
 				// Wp encoding hack
 				$title = the_title('','',false);
-				$title = str_ireplace('&#8217;',"'",$title);
-				$title = str_ireplace('&#8211;',"-",$title);
-				$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-				$title = str_ireplace('&#8364;',"€",$title);
+				$title = str_replace('&#8217;',"'",$title);
+				$title = str_replace('&#8211;',"-",$title);
+				$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+				$title = str_replace('&#8364;',"€",$title);
 				$title = urlencode($title);
 	
 				$link = urlencode(get_permalink());
