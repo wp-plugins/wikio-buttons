@@ -922,10 +922,10 @@ class wikio_badge{
 	
 	// Wp encoding hack
 	$title = the_title('','',false);
-	$title = str_ireplace('&#8217;',"'",$title);
-	$title = str_ireplace('&#8211;',"-",$title);
-	$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-	$title = str_ireplace('&#8364;',"€",$title);
+	$title = str_replace('&#8217;',"'",$title);
+	$title = str_replace('&#8211;',"-",$title);
+	$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+	$title = str_replace('&#8364;',"€",$title);
 	$title = urlencode($title);
 	
 	$link  = urlencode(get_permalink($post->ID));
@@ -1131,10 +1131,10 @@ class wikio_sub_widget {
 				
 				// Wp encoding hack
 				$title = the_title('','',false);
-				$title = str_ireplace('&#8217;',"'",$title);
-				$title = str_ireplace('&#8211;',"-",$title);
-				$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-				$title = str_ireplace('&#8364;',"€",$title);
+				$title = str_replace('&#8217;',"'",$title);
+				$title = str_replace('&#8211;',"-",$title);
+				$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+				$title = str_replace('&#8364;',"€",$title);
 				$title = urlencode($title);
 	
 				$link = urlencode(get_permalink());
@@ -1191,10 +1191,10 @@ class wikio_sub_widget {
 				
 				// Wp encoding hack
 				$title = the_title('','',false);
-				$title = str_ireplace('&#8217;',"'",$title);
-				$title = str_ireplace('&#8211;',"-",$title);
-				$title = str_ireplace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-				$title = str_ireplace('&#8364;',"€",$title);
+				$title = str_replace('&#8217;',"'",$title);
+				$title = str_replace('&#8211;',"-",$title);
+				$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
+				$title = str_replace('&#8364;',"€",$title);
 				$title = urlencode($title);
 	
 				$link = urlencode(get_permalink());
