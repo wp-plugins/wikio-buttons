@@ -1,0 +1,355 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pack\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-02 12:18+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Translater\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: C:\\Users\\admin\\Documents\\devs\\wp\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: wikio-buttons\n"
+
+#: wikio-buttons/wikio-buttons.php:94
+msgid "S'abonner"
+msgstr "Suscribirse"
+
+#: wikio-buttons/wikio-buttons.php:114
+#: wikio-buttons/wikio-buttons.php:307
+#: wikio-buttons/wikio-buttons.php:1511
+#: wikio-buttons/wikio-buttons.php:1512
+msgid "Top des blogs"
+msgstr "Ranking de blogs"
+
+#: wikio-buttons/wikio-buttons.php:272
+msgid "Mise a jour effectuee"
+msgstr "actualización realizada"
+
+#: wikio-buttons/wikio-buttons.php:307
+msgid "Le plugin Wikio vous permet d'ajouter un"
+msgstr "El plugin Wikio permite agregar un "
+
+#: wikio-buttons/wikio-buttons.php:307
+#: wikio-buttons/wikio-buttons.php:663
+msgid "Bouton de vote"
+msgstr "Botón de votación"
+
+#: wikio-buttons/wikio-buttons.php:307
+msgid "et celui de"
+msgstr "y uno para"
+
+#: wikio-buttons/wikio-buttons.php:307
+#: wikio-buttons/wikio-buttons.php:333
+msgid "Partage universel"
+msgstr "Botón universal para compartir"
+
+#: wikio-buttons/wikio-buttons.php:307
+msgid "sous vos articles"
+msgstr "bajo tus artículos"
+
+#: wikio-buttons/wikio-buttons.php:307
+msgid "un ou plusieurs widgets de news"
+msgstr "uno o varios widgets de noticias"
+
+#: wikio-buttons/wikio-buttons.php:307
+msgid "Le bouton d'abonnement universel"
+msgstr "Botón de suscripción universal"
+
+#: wikio-buttons/wikio-buttons.php:307
+msgid "et le badge"
+msgstr "y el badge"
+
+#: wikio-buttons/wikio-buttons.php:309
+msgid "Wikio"
+msgstr "Wikio"
+
+#: wikio-buttons/wikio-buttons.php:314
+msgid "Quel est votre Wikio"
+msgstr "Cuál es tu Wikio"
+
+#: wikio-buttons/wikio-buttons.php:317
+msgid "Wikio.fr (fr)"
+msgstr "Wikio.fr (fr)"
+
+#: wikio-buttons/wikio-buttons.php:318
+msgid "Wikio.it (it)"
+msgstr "Wikio.it (it)"
+
+#: wikio-buttons/wikio-buttons.php:319
+msgid "Wikio.es (es)"
+msgstr "Wikio.es (es)"
+
+#: wikio-buttons/wikio-buttons.php:320
+msgid "Wikio.de (de)"
+msgstr "Wikio.de (de)"
+
+#: wikio-buttons/wikio-buttons.php:321
+msgid "Wikio.com (us)"
+msgstr "Wikio.com (us)"
+
+#: wikio-buttons/wikio-buttons.php:322
+msgid "Wikio.co.uk (uk)"
+msgstr "Wikio.co.uk (uk)"
+
+#: wikio-buttons/wikio-buttons.php:324
+#: wikio-buttons/wikio-buttons.php:354
+#: wikio-buttons/wikio-buttons.php:387
+#: wikio-buttons/wikio-buttons.php:414
+#: wikio-buttons/wikio-buttons.php:515
+#: wikio-buttons/wikio-buttons.php:531
+#: wikio-buttons/wikio-buttons.php:568
+#: wikio-buttons/wikio-buttons.php:604
+#: wikio-buttons/wikio-buttons.php:633
+#: wikio-buttons/wikio-buttons.php:684
+#: wikio-buttons/wikio-buttons.php:710
+#: wikio-buttons/wikio-buttons.php:730
+#: wikio-buttons/wikio-buttons.php:817
+#: wikio-buttons/wikio-buttons.php:843
+#: wikio-buttons/wikio-buttons.php:886
+#: wikio-buttons/wikio-buttons.php:893
+msgid "Enregistrer les modifications"
+msgstr "Guardar las modificaciones"
+
+#: wikio-buttons/wikio-buttons.php:326
+msgid "Inscrivez votre site"
+msgstr "Proponer tu sitio"
+
+#: wikio-buttons/wikio-buttons.php:338
+#: wikio-buttons/wikio-buttons.php:498
+#: wikio-buttons/wikio-buttons.php:668
+#: wikio-buttons/wikio-buttons.php:782
+msgid "Preview"
+msgstr "Previsualizar"
+
+#: wikio-buttons/wikio-buttons.php:348
+#: wikio-buttons/wikio-buttons.php:678
+msgid "Affichage sur la home page"
+msgstr "Mostrar en la home page"
+
+#: wikio-buttons/wikio-buttons.php:351
+#: wikio-buttons/wikio-buttons.php:400
+#: wikio-buttons/wikio-buttons.php:616
+#: wikio-buttons/wikio-buttons.php:681
+#: wikio-buttons/wikio-buttons.php:696
+#: wikio-buttons/wikio-buttons.php:869
+#: wikio-buttons/wikio-buttons.php:1490
+msgid "Oui"
+msgstr "Si"
+
+#: wikio-buttons/wikio-buttons.php:352
+#: wikio-buttons/wikio-buttons.php:401
+#: wikio-buttons/wikio-buttons.php:617
+#: wikio-buttons/wikio-buttons.php:682
+#: wikio-buttons/wikio-buttons.php:697
+#: wikio-buttons/wikio-buttons.php:870
+#: wikio-buttons/wikio-buttons.php:1491
+msgid "Non"
+msgstr "No"
+
+#: wikio-buttons/wikio-buttons.php:352
+#: wikio-buttons/wikio-buttons.php:682
+msgid "Affichage sur les pages d'article uniquement"
+msgstr "Mostrar sólo en las páginas de los artículos"
+
+#: wikio-buttons/wikio-buttons.php:363
+#: wikio-buttons/wikio-buttons.php:541
+msgid "Services"
+msgstr "Servicios"
+
+#: wikio-buttons/wikio-buttons.php:386
+#: wikio-buttons/wikio-buttons.php:566
+#: wikio-buttons/wikio-buttons.php:602
+msgid "Cochez les cases correspondantes aux services que vous souhaitez ajouter"
+msgstr "Selecciona las cajas correspondientes a los servicios que quieres agregar"
+
+#: wikio-buttons/wikio-buttons.php:397
+#: wikio-buttons/wikio-buttons.php:613
+#: wikio-buttons/wikio-buttons.php:693
+#: wikio-buttons/wikio-buttons.php:866
+msgid "Insertion automatique"
+msgstr "Inserción automática"
+
+#: wikio-buttons/wikio-buttons.php:400
+#: wikio-buttons/wikio-buttons.php:616
+#: wikio-buttons/wikio-buttons.php:696
+#: wikio-buttons/wikio-buttons.php:723
+#: wikio-buttons/wikio-buttons.php:869
+msgid "recommande"
+msgstr "recomendado"
+
+#: wikio-buttons/wikio-buttons.php:401
+#: wikio-buttons/wikio-buttons.php:617
+#: wikio-buttons/wikio-buttons.php:697
+#: wikio-buttons/wikio-buttons.php:870
+msgid "je copie et colle le script ci dessous dans mon template"
+msgstr "copio y pego el script que está a continuación en mi template"
+
+#: wikio-buttons/wikio-buttons.php:406
+#: wikio-buttons/wikio-buttons.php:625
+#: wikio-buttons/wikio-buttons.php:702
+#: wikio-buttons/wikio-buttons.php:878
+msgid "Script a copier / coller"
+msgstr "Script para copiar / pegar"
+
+#: wikio-buttons/wikio-buttons.php:410
+#: wikio-buttons/wikio-buttons.php:706
+msgid "Si vous le souhaitez, vous pouvez copier et coller ce script directement dans votre template entre les balises suivantes"
+msgstr "Si quieres puedes copiar y pegar este script directamente en tu template entre las siguientes balizas"
+
+#: wikio-buttons/wikio-buttons.php:493
+msgid "Abonnement universel"
+msgstr "Suscripción universal"
+
+#: wikio-buttons/wikio-buttons.php:508
+#: wikio-buttons/wikio-buttons.php:810
+#: wikio-buttons/wikio-buttons.php:1465
+msgid "Titre du widget"
+msgstr "Título del widget"
+
+#: wikio-buttons/wikio-buttons.php:513
+#: wikio-buttons/wikio-buttons.php:815
+msgid "Donnez un titre a votre widget"
+msgstr "Dale untítulo a tu widget"
+
+#: wikio-buttons/wikio-buttons.php:524
+msgid "Url du flux RSS"
+msgstr "URL del feed RSS"
+
+#: wikio-buttons/wikio-buttons.php:529
+msgid "Url de votre flux RSS. Wordpress propose"
+msgstr "URL de tu feed RSS. Wordpress propone"
+
+#: wikio-buttons/wikio-buttons.php:577
+msgid "Creation de widgets"
+msgstr "Creación de widgets"
+
+#: wikio-buttons/wikio-buttons.php:622
+#: wikio-buttons/wikio-buttons.php:874
+msgid "N'oubliez pas de placer"
+msgstr "No te olvides de poner"
+
+#: wikio-buttons/wikio-buttons.php:622
+#: wikio-buttons/wikio-buttons.php:874
+msgid "le widget dans votre template"
+msgstr "el widget en tu template"
+
+#: wikio-buttons/wikio-buttons.php:629
+#: wikio-buttons/wikio-buttons.php:882
+msgid "Si vous le souhaitez, vous pouvez copier et coller ce script directement dans votre template a l'endroit que vous voulez"
+msgstr "Si quieres puedes copiar y pegar este script directamente en tu template en el lugar que te convenga"
+
+#: wikio-buttons/wikio-buttons.php:719
+msgid "Alignement des boutons"
+msgstr "Alineación de botones"
+
+#: wikio-buttons/wikio-buttons.php:723
+msgid "Horizontalement"
+msgstr "Horizontalmente"
+
+#: wikio-buttons/wikio-buttons.php:724
+msgid "Verticalement"
+msgstr "Verticalmente"
+
+#: wikio-buttons/wikio-buttons.php:728
+msgid "Alignement avec le bouton de partage"
+msgstr "Alineación con el botón para compartir contenidos"
+
+#: wikio-buttons/wikio-buttons.php:777
+msgid "Badge Top des blogs"
+msgstr "Bagde Top de Blogs"
+
+#: wikio-buttons/wikio-buttons.php:787
+msgid "Classement general"
+msgstr "Ranking General"
+
+#: wikio-buttons/wikio-buttons.php:789
+#: wikio-buttons/wikio-buttons.php:794
+#: wikio-buttons/wikio-buttons.php:1105
+#: wikio-buttons/wikio-buttons.php:1111
+#: wikio-buttons/wikio-buttons.php:1534
+#: wikio-buttons/wikio-buttons.php:1541
+msgid "Wikio - Top des blogs"
+msgstr "Wikio - Top de Blogs"
+
+#: wikio-buttons/wikio-buttons.php:792
+msgid "Classement dans votre categorie"
+msgstr "Ranking en mi categoría"
+
+#: wikio-buttons/wikio-buttons.php:799
+msgid "Si aucun chiffre n'est visible verifiez que votre blog est bien inscrit dans Wikio ou"
+msgstr "Si no se muestra ningún número verifica que tu blog está inscrito en Wikio o"
+
+#: wikio-buttons/wikio-buttons.php:800
+msgid "inscrivez-vous gratuitement."
+msgstr "inscíbelo gratis."
+
+#: wikio-buttons/wikio-buttons.php:826
+msgid "Style"
+msgstr "Estilo"
+
+#: wikio-buttons/wikio-buttons.php:852
+msgid "Affichage"
+msgstr "Visualización"
+
+#: wikio-buttons/wikio-buttons.php:854
+msgid "Afficher mon classement dans le top general"
+msgstr "Ver mi clasificación en el ranking general"
+
+#: wikio-buttons/wikio-buttons.php:857
+msgid "Afficher mon classement dans ma categorie"
+msgstr "Ver mi clasificación en el ranking de mi categoría"
+
+#: wikio-buttons/wikio-buttons.php:995
+#: wikio-buttons/wikio-buttons.php:996
+msgid "Subscribe"
+msgstr "Abonarse"
+
+#: wikio-buttons/wikio-buttons.php:1055
+#: wikio-buttons/wikio-buttons.php:1557
+msgid "Cliquez ici pour configurer le widget !"
+msgstr "¡Clic aquí para configurar el Widget!"
+
+#: wikio-buttons/wikio-buttons.php:1269
+msgid "Toutes les news sur les themes que vous voulez"
+msgstr "Todas las noticias sobre los temas que quieras"
+
+#: wikio-buttons/wikio-buttons.php:1271
+msgid "Actus"
+msgstr "Noticias"
+
+#: wikio-buttons/wikio-buttons.php:1358
+msgid "Pas encore d'information..."
+msgstr "todavía no hay información"
+
+#: wikio-buttons/wikio-buttons.php:1372
+msgid "Suite"
+msgstr "Continuar"
+
+#: wikio-buttons/wikio-buttons.php:1468
+msgid "Theme (ex:Emploi France)"
+msgstr "Theme (ej: Empleo España)"
+
+#: wikio-buttons/wikio-buttons.php:1471
+msgid "Nombre de news affichees"
+msgstr "Número de noticias mostradas"
+
+#: wikio-buttons/wikio-buttons.php:1486
+msgid "actuellement"
+msgstr "actualmente"
+
+#: wikio-buttons/wikio-buttons.php:1488
+msgid "Afficher une partie du contenu"
+msgstr "Mostrar una parte del contenido"
+
+#: wikio-buttons/wikio-buttons.php:1493
+msgid "Pensez a enregistrer vos modifications"
+msgstr "No olvides guardar tus modificaciones"
+
+#~ msgid "bouton de vote"
+#~ msgstr "botón de votación"
+#~ msgid "partage universel"
+#~ msgstr "compartir contenidos"
+
