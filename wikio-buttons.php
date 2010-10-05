@@ -3,7 +3,7 @@
 	Plugin Name: Wikio Buttons
 	Plugin URI: http://wikio.com
 	Description: Compatible Worpress 2.3 and above. <a href="themes.php?page=wikio-buttons/wikio-buttons.php">Configure it.</a>
-	Version: 0.2.2
+	Version: 0.2.3
 	Author: Wikio
 	Author URI: http://wikio.com
 	
@@ -26,7 +26,7 @@
 
 
 // Version ?
-	$wikio_plugin_version = "0.2.2";
+	$wikio_plugin_version = "0.2.3";
 	
 // Where is the plugin?
 	$wikio_plugin_place = PLUGINDIR.'/'.dirname(plugin_basename(__FILE__));
@@ -155,6 +155,16 @@
 		echo '<link type="text/css" rel="stylesheet" href="'.get_bloginfo( 'wpurl' ).'/'.$wikio_plugin_place.'/wikio-buttons-style.css" />'."\n";
 	}
 	
+	
+// Decode HTML numeric string reference to character
+	function mt_decode($string){
+		
+		$convmap = array(0xFF, 0x2FFFF, 0, 0xFFFF);
+  		$string = mb_decode_numericentity($string, $convmap, "UTF-8");
+		
+		return $string;
+		
+	}
 
 
 // mt_options_page() displays the page content for the Test Options submenu
@@ -753,6 +763,7 @@
 				update_option( wikio_top_style, $wikio_top_style);
 				update_option( wikio_top_categ, $wikio_top_categ);
 				update_option( wikio_top_gen, $wikio_top_gen);
+				
 			}
 			
 			// return options values
@@ -763,14 +774,9 @@
 				$wikio_top_gen = get_option( 'wikio_top_gen' );
 				
 			// Checked ?
-				
 				if ($wikio_top_categ == 1){$wikio_top_categ_checked = "checked";} else {$wikio_top_categ_checked = "";}
 				if ($wikio_top_gen == 1){$wikio_top_gen_checked = "checked";} else {$wikio_top_gen_checked = "";}
 				
-				//echo 'auto-'.$wikio_top_auto;
-//				echo '-title-'.$wikio_top_title;
-//				echo '-style-'.$wikio_top_style;
-//				echo '-categ-'.$wikio_top_categ;
 			?>
 			
 			<br /><br />
@@ -922,10 +928,9 @@ class wikio_badge{
 	
 	// Wp encoding hack
 	$title = the_title('','',false);
-	$title = str_replace('&#8217;',"'",$title);
-	$title = str_replace('&#8211;',"-",$title);
-	$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-	$title = str_replace('&#8364;',"€",$title);
+	
+	$title = mt_decode($title);
+	
 	$title = urlencode($title);
 	
 	$link  = urlencode(get_permalink($post->ID));
@@ -1131,10 +1136,9 @@ class wikio_sub_widget {
 				
 				// Wp encoding hack
 				$title = the_title('','',false);
-				$title = str_replace('&#8217;',"'",$title);
-				$title = str_replace('&#8211;',"-",$title);
-				$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-				$title = str_replace('&#8364;',"€",$title);
+				
+				$title = mt_decode($title);
+				
 				$title = urlencode($title);
 	
 				$link = urlencode(get_permalink());
@@ -1162,6 +1166,7 @@ class wikio_sub_widget {
 
 // vote button alone
 	function wikio_vote_alone(){
+			
 			$wikio_tld = get_option( 'wikio_tld' );
 						
 			if (get_option( 'wikio_vote_auto' ) == 1){
@@ -1185,16 +1190,16 @@ class wikio_sub_widget {
 
 // share button preview
 	function wikio_share_preview(){
+		
 		$wikio_tld = get_option( 'wikio_tld' );
 		
 		$wikio_share_options = get_option( 'wikio_share_options');
 				
 				// Wp encoding hack
 				$title = the_title('','',false);
-				$title = str_replace('&#8217;',"'",$title);
-				$title = str_replace('&#8211;',"-",$title);
-				$title = str_replace(array('&#8220;', '&#8221;', '&#8222;'),'"',$title);
-				$title = str_replace('&#8364;',"€",$title);
+
+				$title = mt_decode($title);
+
 				$title = urlencode($title);
 	
 				$link = urlencode(get_permalink());
@@ -1216,6 +1221,7 @@ class wikio_sub_widget {
 
 // vote button preview
 	function wikio_vote_preview(){
+			
 			$wikio_tld = get_option( 'wikio_tld' );
 			
 			$link = urlencode(get_permalink());
